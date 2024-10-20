@@ -110,4 +110,19 @@ document.addEventListener('DOMContentLoaded', function() {
       closeModal();
     }
   });
+
+  document.addEventListener('scroll', function() {
+    const lastSection = document.getElementById('contact');
+    const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+    const lastSectionRect = lastSection.getBoundingClientRect();
+    
+    // Check if the last section is in view
+    if (lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
+        scrollIndicators.forEach(indicator => indicator.style.display = 'none');
+    } else {
+        scrollIndicators.forEach(indicator => indicator.style.display = 'flex');
+    }
+  });
+
+
 });

@@ -17,12 +17,14 @@ html, body {
   height: 100%;
   overflow-x: hidden;
 }
+
 .scroll-container{
   height: 100vh;
   overflow-y:scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
   scroll-behavior:auto;
+  overflow-x:hidden;
 }
 
 .section {
@@ -43,10 +45,13 @@ html, body {
 
 
 
+
 .scroll-indicator {
   font-size: 1.3rem;
   position: absolute;
-  bottom: 20px;
+  /* position: relative; */
+  top: 90%;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
 z-index: 1000;
@@ -56,7 +61,6 @@ z-index: 1000;
   cursor: pointer;
   animation: bounce 2s infinite;
 }
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -76,6 +80,7 @@ z-index: 1000;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 #welcome-section h1, #welcome-section h2 {
@@ -517,7 +522,7 @@ nav {
     rgb(177, 118, 130) 20%,
     rgb(197, 185, 162) 33%,
     rgb(171, 144, 115) 66%,
-    rgb(36, 48, 62) 90%
+    rgb(36, 48, 62) 99%
   );
   color: #333;
 
@@ -681,13 +686,14 @@ nav {
     rgb(178, 117, 129) 20%,
     rgb(197, 185, 162),
     rgb(140, 111, 93),
-    rgb(36, 48, 62) 85%
+    rgb(36, 48, 62, 0.76) 85%
   );
   background-size: cover;
   background-position: center;
   color: rgb(36, 48, 62);
   text-align: center;
   padding: 50px 20px;
+  position:relative;
 }
 
 #skills-certificates-section h2 {
@@ -785,7 +791,18 @@ nav {
     min-height: 100vh;
   }
 
+#contact{
+ 
+  background: linear-gradient(
+    to bottom right,
+    rgb(177, 118, 130) 20%,
+    rgb(197, 185, 162) 33%,
+    rgb(171, 144, 115) 66%,
+   
+  );
+  color: #333;
 
+}
  
       #projects {
         width: fit-content;
@@ -911,7 +928,18 @@ nav {
   font-style: italic;
   color: #777;
 }
-
+#credits{
+bottom: -40px;
+font-weight:800;
+text-shadow: #000 1px 1px 1px;
+  color: rgb(197, 176, 176);
+  font-size: 0.5rem;
+}
+#credits a{
+  color: rgb(197, 176, 176);
+ 
+  text-decoration: underline;
+}
 .close-resume {
   position: absolute;
   top: 10px;
@@ -945,3 +973,18 @@ nav {
   }
 }
 
+
+scroll-indicator {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show scroll indicator only for the current section */
+.section:target .scroll-indicator {
+  opacity: 1;
+}
+
+/* Hide scroll indicator on the last section */
+.section:last-of-type .scroll-indicator {
+  display: none;
+}
