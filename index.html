@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -30,9 +30,9 @@
     <div class="scroll-container">
     <section id="welcome-section" class="section ">
         <h1>Welcome</h1>
-        <h2>I am Krishna Shashank</h2>
+        <h1>I am Krishna Shashank</h1>
        <h3 >An Aspiring Software Developer</h3>
-        <div class="scroll-indicator">&#9660;</div>
+        <a href="#skills-certificates-section" class="scroll-indicator"><i class='bx bxs-down-arrow'></i></a>
     </section>
 
    
@@ -66,7 +66,7 @@
 
             <!-- Add more certificates as needed -->
         </div>
-        <div class="scroll-indicator">&#9660;</div>
+        <a href="#work" class="scroll-indicator"><i class='bx bxs-down-arrow'></i></a>
     </section>
     <section id="work" class="section">
         <div id="projects">
@@ -161,11 +161,12 @@
         </div>
         <div id="description">
         </div>
-        <div class="scroll-indicator">&#9660;</div>
+        <a href="#contact" class="scroll-indicator"><i class='bx bxs-down-arrow'></i></a>
     </section>
 
     <section id="contact" class="section">
         <div class="contact-grid">
+
             <div class="contact-upper">
                 <h2>More About My Experience</h2>
                 <button id="resume-btn">View Resume</button>
@@ -187,16 +188,13 @@
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
                 </div>
-            </div>
-
+        </div>
             <p id="credits">Site built and maintained by <a href="https://github.com/shash-ank/krishnas-professional-portfolio/tree/main">Krishna Shashank <i class="fab fa-github"></i></a></p>
         </div>
       
             
       
     </section>
-   
- <!-- Modal Dialog Element for the résumé -->
  <dialog id="resume-dialog">
     <h1>Krishna Shashank Yadava</h1>
 
@@ -282,14 +280,13 @@
         </ul>
     </div>
 
-    <!-- Close button for the dialog -->
+
     <button class="close-resume" type="button">Close</button>
 </dialog>
 
 </div>
+<a href="" class="top"><i class="bx bx-up-arrow-alt"></i></a>
     <script src="script.js"></script>
 </body>
 
 </html>
-
-
